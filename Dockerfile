@@ -44,6 +44,10 @@ ENV RABBITMQ_PID_FILE=/var/lib/rabbitmq/rabbitmq.pid
 ENV RABBITMQ_PLUGINS_DIR=/usr/lib/rabbitmq/plugins
 ENV RABBITMQ_PLUGINS_EXPAND_DIR=/var/lib/rabbitmq/plugins
 
+ENV AUTOCLUSTER_TYPE=consul
+ENV CONSUL_HOST=$CONSUL_SERVER_SERVICE_HOST
+ENV CONSUL_PORT=8500
+
 # Fetch the external plugins and setup RabbitMQ
 RUN \
   apk --purge del curl tar gzip xz && \
