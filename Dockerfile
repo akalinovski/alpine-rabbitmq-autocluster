@@ -70,5 +70,6 @@ RUN \
 
 EXPOSE 4369 5671 5672 15672 25672
 
+RUN chmod a+rw -R /var/lib
 USER rabbitmq
 CMD /usr/lib/rabbitmq/sbin/rabbitmq-server
